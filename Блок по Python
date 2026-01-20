@@ -9,9 +9,9 @@ print(is_isomorphic(s, t))
 True
 Оценить оптимальность решения по времени и памяти и прикрепить текст кода.
 
-print(f'Введите первое слово:')
+print('Введите первое слово:')
 s=input()
-print(f'Введите второе слово:')
+print('Введите второе слово:')
 t=input()
 
 def is_isomorphic(s, t):
@@ -42,8 +42,18 @@ print(missing_number(nums))
 7
 Оценить оптимальность решения по времени и памяти и прикрепить текст кода.
 
+print('Введите числа через запятую:')
+nums = [int(i) for i in int(input()).split(",")]
 
+def missing_number(nums):
+  n = len(nums)+1
+  sum_n = n(n+1)/2
+  sum_num = sum(nums)
+  return sum(n)-sum(nums)
 
+print(missing_number(nums))
+
+Оценка оптимальность решения по времени - O(n) и памяти O(1).
 
 Задание 3: Факторизация
 Реализовать функцию (или тело функции), которая при введении натурального числа n разбивает его на простые множители (представить его в виде простых чисел).
@@ -53,3 +63,23 @@ print(prime_factors(n))
 # Вывод:
 [2, 2, 2, 7]
 Оценить оптимальность решения по времени и памяти и прикрепить текст кода.
+
+print('Введите число:')
+n = int(input())
+
+def prime_factors(n):
+  min_del = 2   # Наименьшее чростое число больше 1
+  sp_del=[]
+  while min_del*min_del <= n:
+    if n%min_del==0:
+      sp_del.append(min_del)
+      n=n/min_del
+    else:
+      min_del+=1
+  if n>1:
+    sp_del.append(int(n))
+  return *sp_del
+
+print(prime_factors(n))
+
+      
